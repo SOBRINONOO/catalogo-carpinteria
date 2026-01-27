@@ -1,180 +1,29 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <title>JC Bandala Carpintería</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <!-- Tailwind -->
-  <script src="https://cdn.tailwindcss.com"></script>
-
-  <style>
-    .fade-up {
-      opacity: 0;
-      transform: translateY(40px);
-      transition: all 0.8s ease;
-    }
-    .fade-up.show {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  </style>
+<meta charset="UTF-8">
+<title>JC Bandala Carpintería</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://cdn.tailwindcss.com"></script>
 </head>
+<body class="bg-slate-900 text-white">
 
-<body class="bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white">
-
-<!-- NAV -->
-<nav class="fixed w-full z-50 bg-gradient-to-r from-amber-700 to-orange-600 shadow-xl">
-  <div class="max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
-    <h1 class="font-bold text-xl tracking-widest">JC BANDALA</h1>
-    <div class="space-x-4 text-sm hidden md:block">
-      <a href="closets.html" class="hover:text-black">Closets</a>
-      <a href="#puertas" class="hover:text-black">Puertas</a>
-      <a href="#cocinas" class="hover:text-black">Cocinas</a>
-      <a href="#mesas" class="hover:text-black">Mesas</a>
-      <a href="#contacto" class="hover:text-black">Contacto</a>
-    </div>
-  </div>
-</nav>
-
-<!-- HERO -->
-<header class="pt-36 pb-28 text-center bg-gradient-to-br from-amber-600 to-orange-500">
-  <h2 class="text-4xl md:text-6xl font-extrabold mb-4">
-    JC BANDALA CARPINTERÍA
-  </h2>
-  <p class="text-lg opacity-90 mb-6">
-    Carpintería profesional · Muebles a medida
-  </p>
-  <a href="https://wa.me/527731505185"
-     class="bg-black text-white px-8 py-3 rounded-full text-lg hover:bg-white hover:text-black transition">
-    📲 Cotiza por WhatsApp
-  </a>
+<header class="py-24 text-center bg-gradient-to-r from-orange-600 to-amber-500">
+  <h1 class="text-5xl font-extrabold">JC BANDALA CARPINTERÍA</h1>
+  <p class="mt-4">Carpintería a medida</p>
 </header>
 
-<!-- CLOSETS -->
-<section id="closets" class="max-w-7xl mx-auto px-6 py-20">
-  <h3 class="text-3xl font-bold mb-10 border-l-8 border-orange-500 pl-4">
-    Closets a Medida
-  </h3>
+<section class="max-w-7xl mx-auto px-6 py-20 grid md:grid-cols-3 gap-10">
 
-  <div class="grid md:grid-cols-3 gap-8">
-    <div class="fade-up bg-slate-800 rounded-2xl overflow-hidden shadow-2xl">
-      <img src="https://tallerdefercho.com/wp-content/uploads/2023/08/Captura-de-pantalla-2023-08-26-033833.png"
-           class="h-56 w-full object-cover">
-      <div class="p-6">
-        <h4 class="font-bold text-xl mb-2">Closet moderno</h4>
-        <p class="text-sm opacity-80">
-          Diseño personalizado en madera o melamina.
-        </p>
-      </div>
-    </div>
-  </div>
+<a href="closets.html" class="bg-slate-800 h-56 rounded-3xl flex items-center justify-center hover:scale-105 transition">Closets</a>
+<a href="puertas.html" class="bg-slate-800 h-56 rounded-3xl flex items-center justify-center hover:scale-105 transition">Puertas</a>
+<a href="cocinas.html" class="bg-slate-800 h-56 rounded-3xl flex items-center justify-center hover:scale-105 transition">Cocinas Integrales</a>
+<a href="mesas.html" class="bg-slate-800 h-56 rounded-3xl flex items-center justify-center hover:scale-105 transition">Mesas</a>
+<a href="bases-cama.html" class="bg-slate-800 h-56 rounded-3xl flex items-center justify-center hover:scale-105 transition">Bases de Cama</a>
+
 </section>
 
-<!-- PUERTAS -->
-<section id="puertas" class="bg-slate-800 py-20">
-  <div class="max-w-7xl mx-auto px-6">
-    <h3 class="text-3xl font-bold mb-10 border-l-8 border-amber-500 pl-4">
-      Puertas
-    </h3>
-
-    <div class="grid md:grid-cols-2 gap-8">
-      <div class="fade-up bg-slate-900 rounded-2xl overflow-hidden shadow-xl">
-        <img src="https://images.unsplash.com/photo-1588854337118-1a6e3f6f9f1b"
-             class="h-56 w-full object-cover">
-        <div class="p-6">
-          <h4 class="text-xl font-bold">Puerta de tablero</h4>
-          <p class="text-sm opacity-80">Madera sólida y resistente</p>
-        </div>
-      </div>
-
-      <div class="fade-up bg-slate-900 rounded-2xl overflow-hidden shadow-xl">
-        <img src="https://images.unsplash.com/photo-1615874959474-d609969a20ed"
-             class="h-56 w-full object-cover">
-        <div class="p-6">
-          <h4 class="text-xl font-bold">Puerta de tambor</h4>
-          <p class="text-sm opacity-80">Ideal para interiores</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- COCINAS -->
-<section id="cocinas" class="max-w-7xl mx-auto px-6 py-20">
-  <h3 class="text-3xl font-bold mb-10 border-l-8 border-orange-500 pl-4">
-    Cocinas Integrales
-  </h3>
-
-  <div class="grid md:grid-cols-2 gap-8">
-    <div class="fade-up bg-slate-800 rounded-2xl overflow-hidden shadow-2xl">
-      <img src="https://images.unsplash.com/photo-1556912167-f556f1f39df3"
-           class="h-64 w-full object-cover">
-      <div class="p-6">
-        <h4 class="text-xl font-bold">Cocina integral a medida</h4>
-        <p class="text-sm opacity-80">
-          Funcional, moderna y personalizada
-        </p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- MESAS Y CAMAS -->
-<section id="mesas" class="bg-slate-800 py-20">
-  <div class="max-w-7xl mx-auto px-6">
-    <h3 class="text-3xl font-bold mb-10 border-l-8 border-amber-500 pl-4">
-      Mesas y Bases de Cama
-    </h3>
-
-    <div class="grid md:grid-cols-2 gap-8">
-      <div class="fade-up bg-slate-900 rounded-2xl overflow-hidden shadow-xl">
-        <img src="https://images.unsplash.com/photo-1616627561839-074385245ff6"
-             class="h-56 w-full object-cover">
-        <div class="p-6">
-          <h4 class="text-xl font-bold">Mesa de madera</h4>
-        </div>
-      </div>
-
-      <div class="fade-up bg-slate-900 rounded-2xl overflow-hidden shadow-xl">
-        <img src="https://images.unsplash.com/photo-1616627451449-80b08c9c6c04"
-             class="h-56 w-full object-cover">
-        <div class="p-6">
-          <h4 class="text-xl font-bold">Base de cama</h4>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- CONTACTO -->
-<section id="contacto" class="py-24 text-center bg-gradient-to-r from-orange-600 to-amber-500">
-  <h3 class="text-4xl font-bold mb-6">
-    ¿Listo para tu proyecto?
-  </h3>
-  <a href="https://wa.me/527731505185"
-     class="bg-black text-white px-10 py-4 rounded-full text-xl hover:bg-white hover:text-black transition">
-    Escríbenos ahora
-  </a>
-</section>
-
-<footer class="bg-black text-center py-8">
-  <p>© 2026 JC Bandala Carpintería</p>
-</footer>
-
-<!-- BOTÓN WHATSAPP -->
-<a href="https://wa.me/527731505185"
-   class="fixed bottom-6 right-6 bg-green-500 text-white p-4 rounded-full shadow-2xl text-2xl hover:scale-110 transition">
-  📲
-</a>
-
-<script>
-  const items = document.querySelectorAll('.fade-up');
-  const obs = new IntersectionObserver(entries => {
-    entries.forEach(e => e.isIntersecting && e.target.classList.add('show'));
-  }, { threshold: 0.2 });
-  items.forEach(i => obs.observe(i));
-</script>
+<a href="https://wa.me/527731505185" class="fixed bottom-6 right-6 bg-green-500 p-4 rounded-full text-2xl">📲</a>
 
 </body>
 </html>
