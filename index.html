@@ -2,197 +2,178 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
+  <title>JC Bandala Carpintería</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>BANDAL | Carpintería</title>
+
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
 
   <style>
-    * {
-      box-sizing: border-box;
-    }
-
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background: #f4f4f4;
-      color: #333;
-    }
-
-    /* ===== HEADER ===== */
-    header {
-      background: linear-gradient(135deg, #4a2f1b, #2b1a10);
-      color: white;
-      text-align: center;
-      padding: 60px 20px;
-      animation: fadeDown 1s ease;
-    }
-
-    header h1 {
-      font-size: 42px;
-      margin-bottom: 10px;
-      letter-spacing: 2px;
-    }
-
-    header p {
-      opacity: 0.9;
-    }
-
-    /* ===== SECTIONS ===== */
-    section {
-      max-width: 1200px;
-      margin: auto;
-      padding: 50px 20px;
-    }
-
-    h2 {
-      margin-bottom: 30px;
-      border-left: 6px solid #4a2f1b;
-      padding-left: 15px;
-      font-size: 28px;
-    }
-
-    /* ===== GRID ===== */
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 25px;
-    }
-
-    /* ===== CARD ===== */
-    .card {
-      background: white;
-      border-radius: 12px;
-      overflow: hidden;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.12);
-      transform: translateY(40px);
+    .fade-up {
       opacity: 0;
-      transition: all 0.6s ease;
+      transform: translateY(40px);
+      transition: all 0.8s ease;
     }
-
-    .card.show {
-      transform: translateY(0);
+    .fade-up.show {
       opacity: 1;
-    }
-
-    .card img {
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
-      transition: transform 0.5s ease;
-    }
-
-    .card:hover img {
-      transform: scale(1.1);
-    }
-
-    .card:hover {
-      transform: translateY(-10px);
-    }
-
-    .info {
-      padding: 20px;
-    }
-
-    .info h3 {
-      margin-top: 0;
-    }
-
-    .price {
-      font-weight: bold;
-      margin: 10px 0;
-    }
-
-    .btn {
-      display: inline-block;
-      background: #4a2f1b;
-      color: white;
-      padding: 10px 18px;
-      border-radius: 25px;
-      text-decoration: none;
-      font-size: 14px;
-      transition: background 0.3s ease, transform 0.3s ease;
-    }
-
-    .btn:hover {
-      background: #2b1a10;
-      transform: scale(1.05);
-    }
-
-    /* ===== FOOTER ===== */
-    footer {
-      background: #1c1c1c;
-      color: white;
-      text-align: center;
-      padding: 30px 20px;
-    }
-
-    /* ===== ANIMATIONS ===== */
-    @keyframes fadeDown {
-      from {
-        opacity: 0;
-        transform: translateY(-40px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+      transform: translateY(0);
     }
   </style>
 </head>
-<body>
 
-<header>
-  <h1>BANDAL</h1>
-  <p>Carpintería · Muebles a medida</p>
-  <p>📲 WhatsApp: +52 7731063326</p>
+<body class="bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white">
+
+<!-- NAV -->
+<nav class="fixed w-full z-50 bg-gradient-to-r from-amber-700 to-orange-600 shadow-xl">
+  <div class="max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
+    <h1 class="font-bold text-xl tracking-widest">JC BANDALA</h1>
+    <div class="space-x-4 text-sm hidden md:block">
+      <a href="closets.html" class="hover:text-black">Closets</a>
+      <a href="#puertas" class="hover:text-black">Puertas</a>
+      <a href="#cocinas" class="hover:text-black">Cocinas</a>
+      <a href="#mesas" class="hover:text-black">Mesas</a>
+      <a href="#contacto" class="hover:text-black">Contacto</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="pt-36 pb-28 text-center bg-gradient-to-br from-amber-600 to-orange-500">
+  <h2 class="text-4xl md:text-6xl font-extrabold mb-4">
+    JC BANDALA CARPINTERÍA
+  </h2>
+  <p class="text-lg opacity-90 mb-6">
+    Carpintería profesional · Muebles a medida
+  </p>
+  <a href="https://wa.me/527731505185"
+     class="bg-black text-white px-8 py-3 rounded-full text-lg hover:bg-white hover:text-black transition">
+    📲 Cotiza por WhatsApp
+  </a>
 </header>
 
-<section>
-  <h2>Closets a Medida</h2>
-  <div class="grid">
-    <div class="card">
-      <img src="closet.jpg" alt="Closet">
-      <div class="info">
-        <h3>Closet moderno</h3>
-        <p>Diseño personalizado en madera o melamina.</p>
-        <p class="price">Desde $____</p>
-        <a class="btn" href="https://wa.me/527731063326">Cotizar</a>
+<!-- CLOSETS -->
+<section id="closets" class="max-w-7xl mx-auto px-6 py-20">
+  <h3 class="text-3xl font-bold mb-10 border-l-8 border-orange-500 pl-4">
+    Closets a Medida
+  </h3>
+
+  <div class="grid md:grid-cols-3 gap-8">
+    <div class="fade-up bg-slate-800 rounded-2xl overflow-hidden shadow-2xl">
+      <img src="https://tallerdefercho.com/wp-content/uploads/2023/08/Captura-de-pantalla-2023-08-26-033833.png"
+           class="h-56 w-full object-cover">
+      <div class="p-6">
+        <h4 class="font-bold text-xl mb-2">Closet moderno</h4>
+        <p class="text-sm opacity-80">
+          Diseño personalizado en madera o melamina.
+        </p>
       </div>
     </div>
   </div>
 </section>
 
-<section>
-  <h2>Cocinas Integrales</h2>
-  <div class="grid">
-    <div class="card">
-      <img src="cocina.jpg" alt="Cocina">
-      <div class="info">
-        <h3>Cocina integral moderna</h3>
-        <p>Diseño a medida con herrajes de calidad.</p>
-        <p class="price">Desde $____</p>
-        <a class="btn" href="https://wa.me/527731063326">Cotizar</a>
+<!-- PUERTAS -->
+<section id="puertas" class="bg-slate-800 py-20">
+  <div class="max-w-7xl mx-auto px-6">
+    <h3 class="text-3xl font-bold mb-10 border-l-8 border-amber-500 pl-4">
+      Puertas
+    </h3>
+
+    <div class="grid md:grid-cols-2 gap-8">
+      <div class="fade-up bg-slate-900 rounded-2xl overflow-hidden shadow-xl">
+        <img src="https://images.unsplash.com/photo-1588854337118-1a6e3f6f9f1b"
+             class="h-56 w-full object-cover">
+        <div class="p-6">
+          <h4 class="text-xl font-bold">Puerta de tablero</h4>
+          <p class="text-sm opacity-80">Madera sólida y resistente</p>
+        </div>
+      </div>
+
+      <div class="fade-up bg-slate-900 rounded-2xl overflow-hidden shadow-xl">
+        <img src="https://images.unsplash.com/photo-1615874959474-d609969a20ed"
+             class="h-56 w-full object-cover">
+        <div class="p-6">
+          <h4 class="text-xl font-bold">Puerta de tambor</h4>
+          <p class="text-sm opacity-80">Ideal para interiores</p>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<footer>
-  <p>© 2026 BANDAL Carpintería</p>
-  <p>Calidad · Diseño · Garantía</p>
+<!-- COCINAS -->
+<section id="cocinas" class="max-w-7xl mx-auto px-6 py-20">
+  <h3 class="text-3xl font-bold mb-10 border-l-8 border-orange-500 pl-4">
+    Cocinas Integrales
+  </h3>
+
+  <div class="grid md:grid-cols-2 gap-8">
+    <div class="fade-up bg-slate-800 rounded-2xl overflow-hidden shadow-2xl">
+      <img src="https://images.unsplash.com/photo-1556912167-f556f1f39df3"
+           class="h-64 w-full object-cover">
+      <div class="p-6">
+        <h4 class="text-xl font-bold">Cocina integral a medida</h4>
+        <p class="text-sm opacity-80">
+          Funcional, moderna y personalizada
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MESAS Y CAMAS -->
+<section id="mesas" class="bg-slate-800 py-20">
+  <div class="max-w-7xl mx-auto px-6">
+    <h3 class="text-3xl font-bold mb-10 border-l-8 border-amber-500 pl-4">
+      Mesas y Bases de Cama
+    </h3>
+
+    <div class="grid md:grid-cols-2 gap-8">
+      <div class="fade-up bg-slate-900 rounded-2xl overflow-hidden shadow-xl">
+        <img src="https://images.unsplash.com/photo-1616627561839-074385245ff6"
+             class="h-56 w-full object-cover">
+        <div class="p-6">
+          <h4 class="text-xl font-bold">Mesa de madera</h4>
+        </div>
+      </div>
+
+      <div class="fade-up bg-slate-900 rounded-2xl overflow-hidden shadow-xl">
+        <img src="https://images.unsplash.com/photo-1616627451449-80b08c9c6c04"
+             class="h-56 w-full object-cover">
+        <div class="p-6">
+          <h4 class="text-xl font-bold">Base de cama</h4>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACTO -->
+<section id="contacto" class="py-24 text-center bg-gradient-to-r from-orange-600 to-amber-500">
+  <h3 class="text-4xl font-bold mb-6">
+    ¿Listo para tu proyecto?
+  </h3>
+  <a href="https://wa.me/527731505185"
+     class="bg-black text-white px-10 py-4 rounded-full text-xl hover:bg-white hover:text-black transition">
+    Escríbenos ahora
+  </a>
+</section>
+
+<footer class="bg-black text-center py-8">
+  <p>© 2026 JC Bandala Carpintería</p>
 </footer>
 
+<!-- BOTÓN WHATSAPP -->
+<a href="https://wa.me/527731505185"
+   class="fixed bottom-6 right-6 bg-green-500 text-white p-4 rounded-full shadow-2xl text-2xl hover:scale-110 transition">
+  📲
+</a>
+
 <script>
-  const cards = document.querySelectorAll('.card');
-
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('show');
-      }
-    });
+  const items = document.querySelectorAll('.fade-up');
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => e.isIntersecting && e.target.classList.add('show'));
   }, { threshold: 0.2 });
-
-  cards.forEach(card => observer.observe(card));
+  items.forEach(i => obs.observe(i));
 </script>
 
 </body>

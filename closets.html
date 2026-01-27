@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Closets | JC Bandala Carpintería</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    .fade-up {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: all 0.8s ease;
+    }
+    .fade-up.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+
+<body class="bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white">
+
+<!-- NAV -->
+<nav class="fixed w-full z-50 bg-gradient-to-r from-amber-700 to-orange-600 shadow-xl">
+  <div class="max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
+    <a href="index.html" class="font-bold text-xl tracking-widest">
+      JC BANDALA
+    </a>
+    <a href="index.html"
+       class="bg-black px-4 py-2 rounded-full text-sm hover:bg-white hover:text-black transition">
+      ⬅ Volver
+    </a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="pt-36 pb-24 text-center bg-gradient-to-br from-amber-600 to-orange-500">
+  <h1 class="text-4xl md:text-6xl font-extrabold mb-4">
+    Closets a Medida
+  </h1>
+  <p class="text-lg opacity-90">
+    Diseños personalizados · Calidad profesional
+  </p>
+</header>
+
+<!-- CLOSETS DE MELAMINA -->
+<section class="max-w-7xl mx-auto px-6 py-20">
+  <h2 class="text-3xl font-bold mb-10 border-l-8 border-orange-500 pl-4">
+    Closets de Melamina
+  </h2>
+
+  <div class="grid md:grid-cols-3 gap-8">
+    <div class="fade-up bg-slate-800 rounded-2xl overflow-hidden shadow-2xl">
+      <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c"
+           class="h-56 w-full object-cover">
+      <div class="p-6">
+        <h3 class="text-xl font-bold mb-2">Closet moderno</h3>
+        <p class="text-sm opacity-80">
+          Ideal para interiores modernos, fácil mantenimiento.
+        </p>
+      </div>
+    </div>
+
+    <div class="fade-up bg-slate-800 rounded-2xl overflow-hidden shadow-2xl">
+      <img src="https://images.unsplash.com/photo-1615874959474-d609969a20ed"
+           class="h-56 w-full object-cover">
+      <div class="p-6">
+        <h3 class="text-xl font-bold mb-2">Closet minimalista</h3>
+        <p class="text-sm opacity-80">
+          Diseño limpio y funcional.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CLOSETS DE MADERA -->
+<section class="bg-slate-800 py-20">
+  <div class="max-w-7xl mx-auto px-6">
+    <h2 class="text-3xl font-bold mb-10 border-l-8 border-amber-500 pl-4">
+      Closets de Madera
+    </h2>
+
+    <div class="grid md:grid-cols-3 gap-8">
+      <div class="fade-up bg-slate-900 rounded-2xl overflow-hidden shadow-xl">
+        <img src="https://images.unsplash.com/photo-1588854337118-1a6e3f6f9f1b"
+             class="h-56 w-full object-cover">
+        <div class="p-6">
+          <h3 class="text-xl font-bold mb-2">Closet clásico</h3>
+          <p class="text-sm opacity-80">
+            Madera sólida, máxima durabilidad.
+          </p>
+        </div>
+      </div>
+
+      <div class="fade-up bg-slate-900 rounded-2xl overflow-hidden shadow-xl">
+        <img src="https://images.unsplash.com/photo-1595526114035-45c2a5e1fa33"
+             class="h-56 w-full object-cover">
+        <div class="p-6">
+          <h3 class="text-xl font-bold mb-2">Closet premium</h3>
+          <p class="text-sm opacity-80">
+            Acabados finos y diseño elegante.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="py-24 text-center bg-gradient-to-r from-orange-600 to-amber-500">
+  <h3 class="text-4xl font-bold mb-6">
+    Cotiza tu closet hoy mismo
+  </h3>
+  <a href="https://wa.me/527731505185"
+     class="bg-black text-white px-10 py-4 rounded-full text-xl hover:bg-white hover:text-black transition">
+    📲 WhatsApp
+  </a>
+</section>
+
+<footer class="bg-black text-center py-8">
+  <p>© 2026 JC Bandala Carpintería</p>
+</footer>
+
+<!-- WHATSAPP -->
+<a href="https://wa.me/527731505185"
+   class="fixed bottom-6 right-6 bg-green-500 text-white p-4 rounded-full shadow-2xl text-2xl hover:scale-110 transition">
+  📲
+</a>
+
+<script>
+  const items = document.querySelectorAll('.fade-up');
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => e.isIntersecting && e.target.classList.add('show'));
+  }, { threshold: 0.2 });
+  items.forEach(i => obs.observe(i));
+</script>
+
+</body>
+</html>
