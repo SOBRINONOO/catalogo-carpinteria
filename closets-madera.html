@@ -2,25 +2,107 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<title>Closets Madera</title>
+<title>Closets de Madera | JC Bandala Carpintería</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <script src="https://cdn.tailwindcss.com"></script>
-</head>
-<body class="bg-slate-900 text-white">
 
-<header class="py-20 text-center bg-amber-600">
-<h1 class="text-5xl font-bold">Closets de Madera</h1>
+<style>
+:root{
+  --wood:#b07a45;
+  --wood-soft:#e6d3b3;
+  --bg:#f4f4f2;
+  --card:#ffffff;
+  --text:#1f1f1f;
+}
+
+body{
+  background:linear-gradient(180deg,#f7f7f5,#eceae6);
+  color:var(--text);
+  font-family:Inter,system-ui,sans-serif;
+}
+
+/* HEADER */
+.header{
+  background:
+    linear-gradient(120deg,rgba(255,255,255,.92),rgba(255,255,255,.75)),
+    url("https://images.unsplash.com/photo-1615874959474-d609969a20ed");
+  background-size:cover;
+  background-position:center;
+  border-bottom:8px solid var(--wood);
+}
+
+/* GALERÍA */
+.photo{
+  height:260px;
+  border-radius:1.5rem;
+  background:linear-gradient(135deg,#e7e5e4,#d6d3d1);
+  box-shadow:0 12px 30px rgba(0,0,0,.15);
+  transition:all .45s cubic-bezier(.4,0,.2,1);
+}
+.photo:hover{
+  transform:translateY(-8px) scale(1.04);
+  box-shadow:0 30px 60px rgba(0,0,0,.25);
+}
+
+/* ANIMACIÓN */
+.fade{
+  opacity:0;
+  transform:translateY(40px);
+  transition:.8s cubic-bezier(.4,0,.2,1);
+}
+.fade.show{
+  opacity:1;
+  transform:translateY(0);
+}
+
+/* BOTÓN VOLVER */
+.back{
+  display:inline-block;
+  margin:3rem auto;
+  padding:.9rem 2.5rem;
+  border-radius:999px;
+  border:2px solid var(--wood);
+  color:var(--wood);
+  font-weight:600;
+  transition:.35s ease;
+}
+.back:hover{
+  background:var(--wood);
+  color:white;
+  transform:translateY(-2px);
+}
+</style>
+</head>
+
+<body>
+
+<header class="header py-24 text-center fade">
+  <h1 class="text-5xl font-extrabold">Closets de Madera</h1>
+  <p class="mt-3 text-lg opacity-80">Elegancia y calidad artesanal</p>
 </header>
 
-<section class="grid md:grid-cols-3 gap-8 p-10">
-<div class="bg-slate-800 h-64">Foto</div>
-<div class="bg-slate-800 h-64">Foto</div>
-<div class="bg-slate-800 h-64">Foto</div>
-<div class="bg-slate-800 h-64">Foto</div>
-<div class="bg-slate-800 h-64">Foto</div>
-<div class="bg-slate-800 h-64">Foto</div>
+<section class="max-w-7xl mx-auto px-6 py-24 grid md:grid-cols-3 gap-12">
+
+  <div class="photo fade flex items-center justify-center opacity-60">Foto</div>
+  <div class="photo fade flex items-center justify-center opacity-60">Foto</div>
+  <div class="photo fade flex items-center justify-center opacity-60">Foto</div>
+  <div class="photo fade flex items-center justify-center opacity-60">Foto</div>
+  <div class="photo fade flex items-center justify-center opacity-60">Foto</div>
+  <div class="photo fade flex items-center justify-center opacity-60">Foto</div>
+
 </section>
 
-<a href="closets.html" class="block text-center underline mb-10">⬅ Volver</a>
+<div class="text-center">
+  <a href="closets.html" class="back fade">⬅ Volver a Closets</a>
+</div>
+
+<script>
+const items=document.querySelectorAll('.fade');
+const obs=new IntersectionObserver(e=>{
+  e.forEach(i=>i.isIntersecting&&i.target.classList.add('show'));
+},{threshold:.15});
+items.forEach(i=>obs.observe(i));
+</script>
+
 </body>
 </html>

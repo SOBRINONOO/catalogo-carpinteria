@@ -5,25 +5,158 @@
 <title>JC Bandala Carpintería</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <script src="https://cdn.tailwindcss.com"></script>
-</head>
-<body class="bg-slate-900 text-white">
 
-<header class="py-24 text-center bg-gradient-to-r from-orange-600 to-amber-500">
+<style>
+:root{
+  --wood:#b07a45;
+  --wood-soft:#e6d3b3;
+  --bg:#f4f4f2;
+  --card:#ffffff;
+  --text:#1f1f1f;
+}
+
+html{scroll-behavior:smooth;}
+
+body{
+  background:linear-gradient(180deg,#f7f7f5,#eceae6);
+  color:var(--text);
+  font-family:Inter,system-ui,sans-serif;
+}
+
+/* HEADER */
+.header{
+  background:
+    linear-gradient(120deg,rgba(255,255,255,.9),rgba(255,255,255,.7)),
+    url("https://p4.wallpaperbetter.com/wallpaper/177/737/193/carpentry-wood-tools-hand-plane-wallpaper-preview.jpg");
+  background-size:cover;
+  background-position:center;
+  border-bottom:8px solid var(--wood);
+}
+
+/* TARJETAS */
+.card{
+  background:var(--card);
+  border-radius:1.75rem;
+  box-shadow:0 15px 40px rgba(0,0,0,.12);
+  transition:all .45s cubic-bezier(.4,0,.2,1);
+  overflow:hidden;
+}
+.card:hover{
+  transform:translateY(-12px);
+  box-shadow:0 35px 80px rgba(0,0,0,.18);
+}
+
+/* TEXTO TARJETA */
+.card-body{
+  padding:1.5rem;
+  text-align:center;
+  font-weight:600;
+  font-size:1.4rem;
+}
+
+/* GALERÍA */
+.photo{
+  height:260px;
+  border-radius:1.25rem;
+  background:linear-gradient(135deg,#e7e5e4,#d6d3d1);
+  box-shadow:0 12px 30px rgba(0,0,0,.12);
+  transition:.4s ease;
+}
+.photo:hover{
+  transform:scale(1.05);
+  box-shadow:0 25px 60px rgba(0,0,0,.25);
+}
+
+/* ANIMACIÓN */
+.fade{
+  opacity:0;
+  transform:translateY(40px);
+  transition:all .8s cubic-bezier(.4,0,.2,1);
+}
+.fade.show{
+  opacity:1;
+  transform:translateY(0);
+}
+</style>
+</head>
+
+<body>
+
+<header class="header py-28 text-center fade">
   <h1 class="text-5xl font-extrabold">JC BANDALA CARPINTERÍA</h1>
-  <p class="mt-4">Carpintería a medida</p>
+  <p class="mt-4 text-lg opacity-80">Muebles a medida · Diseño y calidad</p>
 </header>
 
-<section class="max-w-7xl mx-auto px-6 py-20 grid md:grid-cols-3 gap-10">
+<section class="max-w-7xl mx-auto px-6 py-24 grid md:grid-cols-3 gap-14">
 
-<a href="closets.html" class="bg-slate-800 h-56 rounded-3xl flex items-center justify-center hover:scale-105 transition">Closets</a>
-<a href="puertas.html" class="bg-slate-800 h-56 rounded-3xl flex items-center justify-center hover:scale-105 transition">Puertas</a>
-<a href="cocinas.html" class="bg-slate-800 h-56 rounded-3xl flex items-center justify-center hover:scale-105 transition">Cocinas Integrales</a>
-<a href="mesas.html" class="bg-slate-800 h-56 rounded-3xl flex items-center justify-center hover:scale-105 transition">Mesas</a>
-<a href="bases-cama.html" class="bg-slate-800 h-56 rounded-3xl flex items-center justify-center hover:scale-105 transition">Bases de Cama</a>
+  <!-- CLOSETS -->
+  <a href="closets.html" class="card fade">
+    <img 
+      src="https://i.pinimg.com/1200x/05/59/1a/05591a4fb18b81dcb042c6e300ff6257.jpg" 
+      alt="Closets"
+      class="h-56 w-full object-cover"
+    >
+    <div class="card-body">Closets</div>
+  </a>
+
+  <!-- PUERTAS -->
+  <a href="puertas.html" class="card fade">
+    <img 
+      src="https://images.unsplash.com/photo-1600585154207-8d2e3b5c0f9a" 
+      alt="Puertas"
+      class="h-56 w-full object-cover"
+    >
+    <div class="card-body">Puertas</div>
+  </a>
+
+  <!-- COCINAS -->
+  <a href="cocinas.html" class="card fade">
+    <img 
+      src="https://images.unsplash.com/photo-1556912167-f556f1f39df6" 
+      alt="Cocinas"
+      class="h-56 w-full object-cover"
+    >
+    <div class="card-body">Cocinas Integrales</div>
+  </a>
+
+  <!-- MESAS -->
+  <a href="mesas.html" class="card fade">
+    <img 
+      src="https://images.unsplash.com/photo-1549497538-303791108f95" 
+      alt="Mesas"
+      class="h-56 w-full object-cover"
+    >
+    <div class="card-body">Mesas</div>
+  </a>
+
+  <!-- BASES -->
+  <a href="bases-cama.html" class="card fade">
+    <img 
+      src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c" 
+      alt="Bases de cama"
+      class="h-56 w-full object-cover"
+    >
+    <div class="card-body">Bases de Cama</div>
+  </a>
 
 </section>
 
-<a href="https://wa.me/527731505185" class="fixed bottom-6 right-6 bg-green-500 p-4 rounded-full text-2xl">📲</a>
+<footer class="text-center py-12 opacity-70 fade">
+  © 2026 JC Bandala Carpintería
+</footer>
+
+<a href="https://wa.me/527731505185"
+   class="fixed bottom-6 right-6 bg-green-500 p-4 rounded-full text-2xl shadow-2xl hover:scale-110 transition">
+📲
+</a>
+
+<script>
+const items=document.querySelectorAll('.fade');
+const obs=new IntersectionObserver(e=>{
+  e.forEach(i=>i.isIntersecting&&i.target.classList.add('show'));
+},{threshold:.15});
+items.forEach(i=>obs.observe(i));
+</script>
 
 </body>
 </html>
