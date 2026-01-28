@@ -8,154 +8,201 @@
 
 <style>
 :root{
-  --wood:#b07a45;
-  --wood-soft:#e6d3b3;
-  --bg:#f4f4f2;
-  --card:#ffffff;
-  --text:#1f1f1f;
+  /* Paleta Carpintería Premium */
+  --wood-dark: #3e2723; /* Nogal oscuro */
+  --wood-medium: #8d6e63; /* Roble */
+  --wood-accent: #b07a45; /* Color marca original */
+  --bg-soft: #fdfaf7; /* Fondo crema muy suave */
+  --text-main: #2a2118;
+  --gold-dust: #d4af37;
 }
 
 html{scroll-behavior:smooth;}
 
 body{
-  background:linear-gradient(180deg,#f7f7f5,#eceae6);
-  color:var(--text);
-  font-family:Inter,system-ui,sans-serif;
+  background: linear-gradient(135deg, #fdfaf7 0%, #e7e0d7 100%);
+  color: var(--text-main);
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
 }
 
-/* HEADER */
+/* HEADER - Look Industrial/Elegante */
 .header{
-  background:
-    linear-gradient(120deg,rgba(255,255,255,.9),rgba(255,255,255,.7)),
+  background: 
+    linear-gradient(rgba(42, 33, 24, 0.85), rgba(62, 39, 35, 0.7)),
     url("https://p4.wallpaperbetter.com/wallpaper/177/737/193/carpentry-wood-tools-hand-plane-wallpaper-preview.jpg");
-  background-size:cover;
-  background-position:center;
-  border-bottom:8px solid var(--wood);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  border-bottom: 8px solid var(--wood-accent);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
 }
 
-/* TARJETAS */
+/* TARJETAS - Acabado Nogal */
 .card{
-  background:var(--card);
-  border-radius:1.75rem;
-  box-shadow:0 15px 40px rgba(0,0,0,.12);
-  transition:all .45s cubic-bezier(.4,0,.2,1);
-  overflow:hidden;
+  background: #ffffff;
+  border-radius: 1.5rem;
+  box-shadow: 0 10px 25px -5px rgba(62, 39, 35, 0.1);
+  transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+  overflow: hidden;
+  border: 1px solid rgba(141, 110, 99, 0.1);
 }
+
 .card:hover{
-  transform:translateY(-12px);
-  box-shadow:0 35px 80px rgba(0,0,0,.18);
+  transform: translateY(-15px);
+  box-shadow: 0 25px 50px -12px rgba(62, 39, 35, 0.3);
+  border-color: var(--wood-accent);
+}
+
+.card img {
+  transition: transform 0.7s ease;
+  filter: sepia(20%) contrast(110%); /* Efecto cálido de madera */
+}
+
+.card:hover img {
+  transform: scale(1.1);
+  filter: sepia(0%) contrast(100%);
 }
 
 /* TEXTO TARJETA */
 .card-body{
-  padding:1.5rem;
-  text-align:center;
-  font-weight:600;
-  font-size:1.4rem;
+  padding: 1.5rem;
+  text-align: center;
+  font-weight: 700;
+  font-size: 1.25rem;
+  color: var(--wood-dark);
+  background: #fff;
+  border-top: 2px solid #f3efec;
 }
 
-/* GALERÍA */
-.photo{
-  height:260px;
-  border-radius:1.25rem;
-  background:linear-gradient(135deg,#e7e5e4,#d6d3d1);
-  box-shadow:0 12px 30px rgba(0,0,0,.12);
-  transition:.4s ease;
-}
-.photo:hover{
-  transform:scale(1.05);
-  box-shadow:0 25px 60px rgba(0,0,0,.25);
+/* LOGO Y TÍTULOS */
+.logo-glow {
+  filter: drop-shadow(0 0 15px rgba(212, 175, 55, 0.3));
+  animation: float 6s ease-in-out infinite;
 }
 
-/* ANIMACIÓN */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+/* ANIMACIONES */
 .fade{
-  opacity:0;
-  transform:translateY(40px);
-  transition:all .8s cubic-bezier(.4,0,.2,1);
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease-out, transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
+
 .fade.show{
-  opacity:1;
-  transform:translateY(0);
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.wa-float {
+  animation: pulse-wa 2s infinite;
+}
+
+@keyframes pulse-wa {
+  0% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7); }
+  70% { box-shadow: 0 0 0 15px rgba(34, 197, 94, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0); }
 }
 </style>
 </head>
 
 <body>
 
-<header class="header py-28 text-center fade">
-  <h1 class="text-5xl font-extrabold">JC BANDALA CARPINTERÍA</h1>
-  <p class="mt-4 text-lg opacity-80">Muebles a medida · Diseño y calidad</p>
+<header class="header relative pt-24 pb-20 text-center fade flex flex-col items-center justify-center overflow-hidden">
+  
+  <div class="absolute top-4 right-4 md:top-8 md:right-8 z-20 group">
+    <div class="absolute -inset-2 bg-gradient-to-r from-amber-600 to-yellow-200 rounded-full blur opacity-20 group-hover:opacity-60 transition duration-1000"></div>
+    <img 
+      src="logo1.png" 
+      alt="JC Bandala Logo" 
+      class="relative w-28 md:w-44 logo-glow transition-transform duration-500 hover:rotate-3"
+    >
+  </div>
+
+  <div class="bg-black/30 backdrop-blur-md py-6 px-10 rounded-3xl border border-white/20 shadow-2xl mx-4">
+    <h1 class="text-4xl md:text-7xl font-black tracking-tighter text-white mb-2">
+      JC BANDALA <span class="text-[#b07a45]">CARPINTERÍA</span>
+    </h1>
+    <div class="flex items-center justify-center gap-6 mt-2">
+      <span class="h-[3px] w-12 bg-[#b07a45] rounded-full"></span>
+      <p class="text-sm md:text-xl font-bold uppercase tracking-[0.4em] text-amber-50">Arte en Madera</p>
+      <span class="h-[3px] w-12 bg-[#b07a45] rounded-full"></span>
+    </div>
+  </div>
+
 </header>
 
-<section class="max-w-7xl mx-auto px-6 py-24 grid md:grid-cols-3 gap-14">
+<main class="max-w-7xl mx-auto px-6 py-20">
+  <div class="grid md:grid-cols-3 gap-10">
+    
+    <a href="closets.html" class="card fade">
+      <div class="overflow-hidden">
+        <img src="https://i.pinimg.com/1200x/05/59/1a/05591a4fb18b81dcb042c6e300ff6257.jpg" alt="Closets" class="h-64 w-full object-cover">
+      </div>
+      <div class="card-body">Closets</div>
+    </a>
 
-  <!-- CLOSETS -->
-  <a href="closets.html" class="card fade">
-    <img 
-      src="https://i.pinimg.com/1200x/05/59/1a/05591a4fb18b81dcb042c6e300ff6257.jpg" 
-      alt="Closets"
-      class="h-56 w-full object-cover"
-    >
-    <div class="card-body">Closets</div>
-  </a>
+    <a href="puertas.html" class="card fade">
+      <div class="overflow-hidden">
+        <img src="https://us.123rf.com/450wm/baldyrgan/baldyrgan1309/baldyrgan130900194/22348415-colecci%C3%B3n-de-puertas-de-ilustraci%C3%B3n-en-l%C3%ADneas-negras-simples.jpg?ver=6" alt="Puertas" class="h-64 w-full object-cover">
+      </div>
+      <div class="card-body">Puertas Principales</div>
+    </a>
 
-  <!-- PUERTAS -->
-  <a href="puertas.html" class="card fade">
-    <img 
-      src="https://images.unsplash.com/photo-1600585154207-8d2e3b5c0f9a" 
-      alt="Puertas"
-      class="h-56 w-full object-cover"
-    >
-    <div class="card-body">Puertas</div>
-  </a>
+    <a href="cocinas.html" class="card fade">
+      <div class="overflow-hidden">
+        <img src="https://modaenlacocina.wordpress.com/wp-content/uploads/2014/09/marga-cobec3b1a4.jpg?w=1024" alt="Cocinas" class="h-64 w-full object-cover">
+      </div>
+      <div class="card-body">Cocinas Integrales</div>
+    </a>
 
-  <!-- COCINAS -->
-  <a href="cocinas.html" class="card fade">
-    <img 
-      src="https://images.unsplash.com/photo-1556912167-f556f1f39df6" 
-      alt="Cocinas"
-      class="h-56 w-full object-cover"
-    >
-    <div class="card-body">Cocinas Integrales</div>
-  </a>
+    <a href="mesas.html" class="card fade">
+      <div class="overflow-hidden">
+        <img src="https://previews.123rf.com/images/arkadivna/arkadivna1903/arkadivna190300333/124721366-realistic-sketch-of-the-table-in-perspective-vector-illustration.avif" alt="Mesas" class="h-64 w-full object-cover">
+      </div>
+      <div class="card-body">Mesas de Comedor</div>
+    </a>
 
-  <!-- MESAS -->
-  <a href="mesas.html" class="card fade">
-    <img 
-      src="https://images.unsplash.com/photo-1549497538-303791108f95" 
-      alt="Mesas"
-      class="h-56 w-full object-cover"
-    >
-    <div class="card-body">Mesas</div>
-  </a>
+    <a href="bases-cama.html" class="card fade">
+      <div class="overflow-hidden">
+        <img src="https://www.shutterstock.com/image-vector/double-bed-blanket-two-pillows-600nw-2662700057.jpg" alt="Bases de cama" class="h-64 w-full object-cover">
+      </div>
+      <div class="card-body">Bases de Cama</div>
+    </a>
 
-  <!-- BASES -->
-  <a href="bases-cama.html" class="card fade">
-    <img 
-      src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c" 
-      alt="Bases de cama"
-      class="h-56 w-full object-cover"
-    >
-    <div class="card-body">Bases de Cama</div>
-  </a>
+  </div>
+</main>
 
-</section>
-
-<footer class="text-center py-12 opacity-70 fade">
-  © 2026 JC Bandala Carpintería
+<footer class="text-center py-16 text-[#3e2723] font-bold fade opacity-80">
+  <div class="mb-4 flex justify-center gap-4">
+    <span class="w-12 h-[2px] bg-[#b07a45] self-center"></span>
+    <span class="tracking-widest">JC BANDALA • CARPINTERIA</span>
+    <span class="w-12 h-[2px] bg-[#b07a45] self-center"></span>
+  </div>
 </footer>
 
 <a href="https://wa.me/527731505185"
-   class="fixed bottom-6 right-6 bg-green-500 p-4 rounded-full text-2xl shadow-2xl hover:scale-110 transition">
-📲
+   class="fixed bottom-8 right-8 bg-[#25d366] p-5 rounded-full text-3xl shadow-2xl hover:scale-110 transition-all z-50 wa-float text-white">
+  <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 16 16">
+    <path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z"/>
+  </svg>
 </a>
 
 <script>
-const items=document.querySelectorAll('.fade');
-const obs=new IntersectionObserver(e=>{
-  e.forEach(i=>i.isIntersecting&&i.target.classList.add('show'));
-},{threshold:.15});
-items.forEach(i=>obs.observe(i));
+const items = document.querySelectorAll('.fade');
+const obs = new IntersectionObserver(entries => {
+  entries.forEach((entry, index) => {
+    if (entry.isIntersecting) {
+      setTimeout(() => {
+        entry.target.classList.add('show');
+      }, index * 100); 
+    }
+  });
+}, { threshold: 0.1 });
+items.forEach(i => obs.observe(i));
 </script>
 
 </body>

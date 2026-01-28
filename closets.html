@@ -8,99 +8,132 @@
 
   <style>
     :root{
-      --wood:#b07a45;
-      --wood-soft:#e6d3b3;
-      --text:#1f1f1f;
+      --wood-dark: #3e2723;
+      --wood-medium: #8d6e63;
+      --wood-accent: #b07a45;
+      --text-main: #2a2118;
     }
+
+    html{scroll-behavior:smooth;}
 
     body{
-      background:linear-gradient(180deg,#f7f7f5,#eceae6);
-      color:var(--text);
-      font-family:system-ui,sans-serif;
+      background: linear-gradient(135deg, #fdfaf7 0%, #e7e0d7 100%);
+      color: var(--text-main);
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      min-height: 100vh;
     }
 
+    /* HEADER - Imagen de fondo que se ve COMPLETA */
     .header{
-      background:
-        linear-gradient(120deg,rgba(255,255,255,.92),rgba(255,255,255,.85)),
+      background: 
+        linear-gradient(rgba(42, 33, 24, 0.7), rgba(42, 33, 24, 0.7)), /* Capa oscura para leer texto */
         url("https://i.pinimg.com/1200x/05/59/1a/05591a4fb18b81dcb042c6e300ff6257.jpg");
-      background-size: contain;
+      background-size: contain; /* AQUÍ: Se ve toda la imagen */
       background-repeat: no-repeat;
       background-position: center;
-      background-color: #f5f3ef;
-      border-bottom:8px solid var(--wood);
+      background-color: #2a2118; /* Color de relleno para que no se vea blanco a los lados */
+      border-bottom: 8px solid var(--wood-accent);
+      min-height: 400px; /* Altura para que luzca la foto */
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
+    /* TARJETAS */
     .card{
-      background:white;
-      border-radius:1.75rem;
-      box-shadow:0 15px 40px rgba(0,0,0,.12);
-      transition:.45s;
-      overflow:hidden;
+      background: #ffffff;
+      border-radius: 1.5rem;
+      box-shadow: 0 10px 25px -5px rgba(62, 39, 35, 0.1);
+      transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+      overflow: hidden;
+      border: 1px solid rgba(141, 110, 99, 0.1);
     }
 
     .card:hover{
-      transform:translateY(-12px);
-      box-shadow:0 35px 80px rgba(0,0,0,.18);
+      transform: translateY(-15px);
+      box-shadow: 0 25px 50px -12px rgba(62, 39, 35, 0.3);
     }
 
     .img-box{
-      height:220px;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      background:#fff;
+      width: 100%;
+      height: 350px;
+      background: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px;
     }
 
     .img-box img{
-      width:100%;
-      height:100%;
-      object-fit:contain;
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+      transition: transform 0.6s ease;
+    }
+
+    .card:hover .img-box img{
+      transform: scale(1.05);
     }
 
     .card-body{
-      padding:1.5rem;
-      text-align:center;
-      font-size:1.4rem;
-      font-weight:600;
+      padding: 1.5rem;
+      text-align: center;
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--wood-dark);
+      background: #fff;
+      border-top: 2px solid #f3efec;
     }
 
-    .fade{
-      opacity:0;
-      transform:translateY(40px);
-      transition:.8s cubic-bezier(.4,0,.2,1);
-    }
-
-    .fade.show{
-      opacity:1;
-      transform:translateY(0);
-    }
-
+    /* BOTÓN NAVEGACIÓN */
     .nav-btn{
-      display:inline-block;
-      margin:.75rem;
-      padding:.9rem 2.5rem;
-      border-radius:999px;
-      border:2px solid var(--wood);
-      color:var(--wood);
-      font-weight:600;
-      transition:.35s;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 1rem 2.5rem;
+      border-radius: 999px;
+      background: var(--wood-dark);
+      color: white;
+      font-weight: 700;
+      transition: all .35s;
+      box-shadow: 0 10px 20px rgba(62, 39, 35, 0.2);
     }
 
     .nav-btn:hover{
-      background:var(--wood);
-      color:white;
+      background: var(--wood-accent);
+      transform: scale(1.05);
+    }
+
+    /* ANIMACIONES */
+    .fade{
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.8s ease-out, transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+    }
+
+    .fade.show{
+      opacity: 1;
+      transform: translateY(0);
     }
   </style>
 </head>
 
 <body>
 
-<header class="header py-24 text-center fade">
-  <h1 class="text-4xl font-extrabold">Closets</h1>
-  <p class="mt-3 opacity-80">Elige el tipo de material</p>
+<header class="header fade">
+  <div class="bg-black/40 backdrop-blur-md py-8 px-12 rounded-3xl border border-white/20 shadow-2xl mx-4 text-center">
+    <h1 class="text-5xl md:text-7xl font-black tracking-tighter text-white">
+      CLOSETS
+    </h1>
+    <div class="flex items-center justify-center gap-4 mt-2">
+      <span class="h-[2px] w-8 bg-[#b07a45]"></span>
+      <p class="text-amber-50 uppercase tracking-[0.3em] font-bold text-sm">Materiales de Calidad</p>
+      <span class="h-[2px] w-8 bg-[#b07a45]"></span>
+    </div>
+  </div>
 </header>
 
-<section class="max-w-6xl mx-auto px-6 py-20 grid md:grid-cols-2 gap-14">
+<section class="max-w-6xl mx-auto px-6 py-16 grid md:grid-cols-2 gap-10">
 
   <a href="closets-melamina.html" class="card fade">
     <div class="img-box">
@@ -113,21 +146,37 @@
     <div class="img-box">
       <img src="https://cuponzote.com/cdn/shop/products/Florencia_b3450dbe-7199-4441-9d52-5666a7f8114a_1200x1200.jpg?v=1567451018" alt="Closets de Madera">
     </div>
-    <div class="card-body">Closets de Madera</div>
+    <div class="card-body">Closets de Madera Sólida</div>
   </a>
 
 </section>
 
 <div class="text-center mb-20">
-  <a href="index.html" class="nav-btn fade">🏠 Ir a Inicio</a>
+  <a href="index.html" class="nav-btn fade">
+    <span>🏠</span> Volver al Inicio
+  </a>
 </div>
+
+<footer class="text-center py-16 text-[#3e2723] font-bold fade opacity-80">
+  <div class="mb-4 flex justify-center gap-4">
+    <span class="w-12 h-[2px] bg-[#b07a45] self-center"></span>
+    <span class="tracking-widest">JC BANDALA • CARPINTERIA</span>
+    <span class="w-12 h-[2px] bg-[#b07a45] self-center"></span>
+  </div>
+</footer>
 
 <script>
   const items = document.querySelectorAll('.fade');
-  const obs = new IntersectionObserver(e=>{
-    e.forEach(i=>i.isIntersecting && i.target.classList.add('show'));
-  },{threshold:.15});
-  items.forEach(i=>obs.observe(i));
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach((entry, index) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => {
+          entry.target.classList.add('show');
+        }, index * 100); 
+      }
+    });
+  }, { threshold: 0.1 });
+  items.forEach(i => obs.observe(i));
 </script>
 
 </body>
